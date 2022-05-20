@@ -1,0 +1,12 @@
+{% extends "tareas/layout.html" %}
+{% block body %}
+<h1>Alta de Tarea</h1>
+<form action="{% url 'TAREAS:agregar' %}" method="post">
+    {% csrf_token %}
+    {{ formulario_alta_tarea }}
+    <input type="submit" value="Guardar">
+</form>
+<div class="acciones">
+    <a href="{% url 'TAREAS:index' %}">Volver a la Lista de Tareas</a>
+</div>
+{% endblock %}
